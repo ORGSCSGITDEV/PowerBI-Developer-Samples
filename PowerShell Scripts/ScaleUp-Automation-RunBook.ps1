@@ -59,7 +59,7 @@ if ($WebhookData)
             $ConnectionAssetName = "AzureRunAsConnection"
             Write-Verbose "Get connection asset: $ConnectionAssetName" -Verbose
             $Conn = Get-AutomationConnection -Name $ConnectionAssetName
-            if ($Conn -eq $null)
+            if ($null -eq $Conn)
             {
                throw "Could not retrieve connection asset: $ConnectionAssetName. Check that this asset exists in the Automation account."
             }
